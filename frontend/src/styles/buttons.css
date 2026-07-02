@@ -1,0 +1,90 @@
+.btn {
+  padding:10px 14px;
+  border-radius:10px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.btn.primary {
+  background:var(--accent);
+  color:white;
+}
+
+.btn.primary:hover {
+  background-color: #0827c4;
+}
+
+.btn.secondary {
+  background: #e9e7e3;
+  color: #111;
+}
+
+.btn.secondary:hover {
+  background: #d2d0cc;
+}
+
+.btn.danger {
+  background:#d8585d;
+  color:white;
+}
+
+.btn.stop {
+  background-color: #f3d6d9;
+  color: #8b3a3a;
+}
+
+.btn.stop:hover {
+  background-color: #ecc7cc;
+}
+
+.btn.primary,
+.btn.secondary,
+.btn.confirm {
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 15px;
+}
+
+/* ── Modal overlay ── */
+.confirm-overlay-fixed {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.confirm-box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+  width: min(500px, 90vw);
+}
+
+@media (max-width: 600px) {
+  .confirm-box {
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+}
+
+.confirm-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+@keyframes dot-blink {
+  0%, 60%, 100% { opacity: 0; }
+  30%           { opacity: 1; }
+}
+
+.adding-dot {
+  animation: dot-blink 1.2s infinite;
+}
+.adding-dot:nth-child(2) { animation-delay: 0.2s; }
+.adding-dot:nth-child(3) { animation-delay: 0.4s; }

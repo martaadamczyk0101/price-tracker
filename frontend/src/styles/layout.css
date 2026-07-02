@@ -1,0 +1,73 @@
+.app-container {
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+
+/* main grid: product list + add panel */
+.main-layout {
+  display:grid;
+  grid-template-columns: 1fr 440px;
+  gap:32px;
+  padding:32px;
+}
+
+/* add panel fixed width + doesn't stretch vertically */
+.add-panel {
+  align-self:start;
+  max-width:440px;
+  width:100%;
+}
+
+/* products column: doesn't stretch the add panel */
+.products-column {
+  align-self:start;
+}
+
+/* responsive: stack on small screens */
+@media (max-width:860px) {
+  .main-layout { grid-template-columns: 1fr; }
+  .add-panel { width:100%; }
+}
+
+@media (max-width: 600px) {
+  .main-layout {
+    padding: 10px;
+    gap: 12px;
+  }
+  .card {
+    padding: 14px;
+  }
+}
+
+.demo-banner {
+  width: 100%;
+  box-sizing: border-box;
+  background: #eff6ff;
+  border-bottom: 1px solid #bfdbfe;
+  color: #1e40af;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 10px 24px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.product-count {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #9ca3af;
+}
+
+.footer {
+  margin-top: auto;
+  padding: 24px;
+  font-size: small;
+  text-align: center;
+  color: var(--text-muted);
+}

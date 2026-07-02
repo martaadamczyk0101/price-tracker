@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Logs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            font-size: 12px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px 12px;
+        }
+        th {
+            background: #f4f4f4;
+        }
+        .status-ERROR {
+            color: #d9534f;
+            font-weight: bold;
+        }
+        .status-OK {
+            color: #5cb85c;
+            font-weight: bold;
+        }
+        .status-PRICE_CHANGE {
+            color: #0275d8;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>System Logs</h1>
+
+<table>
+    <tr>
+        <th>Created At</th>
+        <th>Message</th>
+        <th>Product ID</th>
+        <th>Url</th>
+        <th>Status</th>
+    </tr>
+
+    {% for log in logs %}
+    <tr>
+        <td>{{ log.created_at }}</td>
+        <td>{{ log.message }}</td>
+        <td>{{ log.product_id }}</td>
+        <td>
+            {% if log.product %}
+                <a href="{{ log.product.url }}" target="_blank">{{ log.product.url }}</a>
+            {% endif %}
+        </td>          
+        <td class="status-{{ log.status }}">{{ log.status }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

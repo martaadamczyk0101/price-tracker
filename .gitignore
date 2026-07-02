@@ -1,0 +1,73 @@
+# Created by venv; see https://docs.python.org/3/library/venv.html
+**/__pycache__
+venv311
+**/node_modules
+/node_modules
+
+**/.pnp
+# testing
+**/coverage
+# production
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+
+# --- Virtual environments ---
+venv/
+venv
+.env/
+.env
+.airflow_venv/
+airflow_venv/
+airflow/venv/
+
+# --- Airflow runtime ---
+airflow/logs/
+airflow/airflow.db
+airflow/*.pid
+airflow/webserver_config.py
+airflow/__pycache__/
+
+# --- Selenium / Chrome ---
+*.log
+chromedriver
+selenium.log
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- Secrets ---
+!.env.example
+
+# --- IDE ---
+.vscode/
+.idea/
+
+# --- Debug / test scripts ---
+backend/debug_*.py
+backend/test_*.py
+backend/seed_demo.py
+test_telegram_alert.py
+
+# --- Screenshots / loose images in root ---
+*.png
+Zrzut\ ekranu*
+favicon.ico
+!frontend/public/*.png
+
+# --- SSH keys ---
+assets/ssh
+assets/ssh.pub
+
+# --- Misc local files ---
+cookies.txt
+assets/
+
+# --- Old frontend build artifacts ---
+backend/app/static/react/

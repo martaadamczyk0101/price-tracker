@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@600;700&display=swap');
+
+:root {
+  --bg: #F7F3EB;
+  --card-bg: #FFFFFF;
+  --accent: #0A2FF1;
+  --text-main: #0F1724;
+  --text-muted: #6B7280;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: Inter, sans-serif;
+  color: var(--text-main);
+  line-height: 1.45;
+  overflow-x: hidden;
+}
+
+h1,h2,h3 { margin: 0 0 12px 0; font-family: Poppins, sans-serif; }
+
+.muted { color: var(--text-muted); }
+
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: 0px 8px 26px rgba(0,0,0,0.08);
+}

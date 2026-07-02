@@ -1,0 +1,26 @@
+.add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.clean-input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid #d6d3cd;
+  background: #faf7f2;
+  font-size: 15px;
+}
+
+.clean-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: white;
+}
+
+.add-actions {
+  display: flex;
+  gap: 12px;
+}

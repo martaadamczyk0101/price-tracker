@@ -1,0 +1,92 @@
+.price-history {
+  margin-top: 10px;
+  margin-bottom: -10px;
+  text-align: center;
+}
+
+.price-history__toggle {
+  background: none;
+  border: none;
+  color: rgb(135, 134, 134);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 200;
+  letter-spacing: 0.3px;
+}
+
+.price-history__toggle:hover {
+  text-decoration: underline;
+}
+
+.price-history__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  margin-top: 10px;
+}
+
+.price-history__content.open {
+  max-height: 300px;
+  transition: 1s ease;
+}
+
+.price-history__row {
+  display: grid;
+  grid-template-columns: 80px 90px 20px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  padding: 4px 0;
+}
+
+.price-history__date {
+  text-align: right;
+  color: #777;
+  font-size: 0.8rem;
+}
+
+.price-history__arrow {
+  width: 16px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.price-history__price {
+  min-width: 80px;
+  text-align: right;
+}
+
+.price-history__date {
+  color: #777;
+  font-size: 0.8rem;
+}
+
+.price-history__loading {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.chevron-down {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  margin-left: 6px;
+  margin-bottom: 2px;
+}
+
+.chevron-down.open {
+  transform: rotate(-135deg);
+  margin-bottom: -1px;
+}
+
+.price-history__arrow.up {
+  color: #e28a8a; 
+}
+
+.price-history__arrow.down {
+  color: #6fbf8a; 
+}
