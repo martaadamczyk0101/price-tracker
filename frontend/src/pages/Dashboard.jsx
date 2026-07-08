@@ -7,6 +7,7 @@ import '../styles/Header.css';
 
 export default function Dashboard() {
   const [products, setProducts] = useState([]);
+  const [adding, setAdding] = useState(false);
   const { logout, user } = useAuth();
 
   async function loadProducts() {
@@ -53,12 +54,12 @@ export default function Dashboard() {
             tracked items
             <span className="product-count">{products.length}/20</span>
           </h1>
-          <ProductList products={products} onDelete={loadProducts} />
+          <ProductList products={products} onDelete={loadProducts} adding={adding} />
         </section>
 
         <section className="section card add-panel">
           <h2 className="section-title">add URL</h2>
-          <AddProduct onProductAdded={loadProducts} />
+          <AddProduct onProductAdded={loadProducts} onAddingChange={setAdding} />
         </section>
       </main>
 

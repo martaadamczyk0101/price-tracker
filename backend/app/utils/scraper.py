@@ -1,15 +1,17 @@
 import json
+import platform
 import random
 import time
 
 import undetected_chromedriver as uc
-from pyvirtualdisplay import Display
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
 from backend.app.utils.price_parser import parse_price
 from backend.app.utils.selectors import SELECTORS
+
+_IS_LINUX = platform.system() == "Linux"
 
 _USER_AGENTS = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
@@ -31,8 +33,23 @@ def get_product_info(url):
     title_selectors = SELECTORS[store_base]["title"]
     image_selectors = SELECTORS[store_base].get("image", [])
 
-    display = Display(visible=False, size=(1920, 1080))
-    display.start()
+    if _IS_LINUX:
+        import glob
+        import os
+        import subprocess
+        from pyvirtualdisplay import Display
+
+        subprocess.run(["pkill", "-9", "Xvfb"], capture_output=True)
+        for lock in glob.glob("/tmp/.X*-lock"):
+            try:
+                os.remove(lock)
+            except OSError:
+                pass
+
+        display = Display(visible=False, size=(1920, 1080))
+        display.start()
+    else:
+        display = None
 
     options = uc.ChromeOptions()
     options.add_argument("--no-sandbox")
@@ -40,13 +57,16 @@ def get_product_info(url):
     options.add_argument("--disable-gpu")
     options.add_argument("--window-size=1920,1080")
     options.add_argument(f"--user-agent={random.choice(_USER_AGENTS)}")
-    options.binary_location = "/usr/bin/chromium"
 
-    driver = uc.Chrome(
-        options=options,
-        driver_executable_path="/usr/bin/chromedriver",
-        version_main=149,
-    )
+    if _IS_LINUX:
+        options.binary_location = "/usr/bin/chromium"
+        driver = uc.Chrome(
+            options=options,
+            driver_executable_path="/usr/bin/chromedriver",
+            version_main=149,
+        )
+    else:
+        driver = uc.Chrome(options=options)
 
     try:
         driver.get(url)
@@ -114,4 +134,5 @@ def get_product_info(url):
 
     finally:
         driver.quit()
-        display.stop()
+        if display is not None:
+            display.stop()

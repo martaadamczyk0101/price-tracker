@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import SupportedShopsModal from "./SupportedShopsModal";
 import '../styles/AddProduct.css';
 
-export default function AddProduct({ onProductAdded }) {
+export default function AddProduct({ onProductAdded, onAddingChange }) {
   const [url, setUrl] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -17,6 +17,7 @@ export default function AddProduct({ onProductAdded }) {
 
     try {
       setLoading(true);
+      if (onAddingChange) onAddingChange(true);
 
       const body = new URLSearchParams();
       body.append("url", url.trim());
@@ -45,6 +46,7 @@ export default function AddProduct({ onProductAdded }) {
       setInfoOpen(true);
     } finally {
       setLoading(false);
+      if (onAddingChange) onAddingChange(false);
     }
   }
 

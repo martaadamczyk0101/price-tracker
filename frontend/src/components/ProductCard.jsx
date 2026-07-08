@@ -119,15 +119,14 @@ export default function ProductCard({ product, onDeleted }) {
       {confirmOpen && (
         <div className="confirm-overlay-fixed">
           <div className="confirm-box">
-            <div style={{ marginBottom: 20 }}>Do you want to stop tracking this item?</div>
-
-            <div className="confirm-actions" style={{ gap: 10 }}>
-              <button className="btn stop confirm" onClick={doDelete} disabled={deleting}>
-                {deleting ? "Removing…" : "Confirm"}
-              </button>
-
-              <button className="btn secondary" onClick={() => setConfirmOpen(false)} disabled={deleting}>
+            <div className="confirm-title">Stop tracking this item?</div>
+            <div className="confirm-sub">This will remove the product from your tracked list.</div>
+            <div className="confirm-actions">
+              <button className="confirm-btn confirm-btn--cancel" onClick={() => setConfirmOpen(false)} disabled={deleting}>
                 Cancel
+              </button>
+              <button className="confirm-btn confirm-btn--danger" onClick={doDelete} disabled={deleting}>
+                {deleting ? "Removing…" : "Confirm"}
               </button>
             </div>
           </div>
