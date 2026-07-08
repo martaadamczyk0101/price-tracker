@@ -44,7 +44,12 @@ SELECTORS = {
         ],
         "image": [
             "img.gallery-main-photo",
-            "img[src*='images.morele.net']",
+            ".product-gallery img",
+            ".gallery-main img",
+            "#product-photo img",
+            ".product-images img",
+            "img[class*='product-photo']",
+            "img[class*='gallery-photo']",
         ],
     },
     "https://www.housebrand.com": {

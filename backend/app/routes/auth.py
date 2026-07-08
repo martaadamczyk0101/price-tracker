@@ -28,7 +28,6 @@ def _reset_demo_account(db, user):
     existing = {p.url: p for p in db.query(Product).filter_by(user_id=user.id).all()}
     snapshot_urls = {pd["url"] for pd in snapshot_products}
 
-    # Remove products no longer in snapshot
     for url, product in list(existing.items()):
         if url not in snapshot_urls:
             pid = product.id
@@ -41,14 +40,22 @@ def _reset_demo_account(db, user):
     for pd in snapshot_products:
         url = pd["url"]
         if url in existing:
-            # Product already exists — keep its live prices, just refresh metadata
             product = existing[url]
             product.name = pd["name"]
             product.image_url = pd.get("image_url")
             product.active = True
             product.has_error = False
+
+            has_prices = db.query(Price).filter_by(product_id=product.id).count() > 0
+            if not has_prices and pd["prices"]:
+                for entry in pd["prices"]:
+                    db.add(Price(
+                        product_id=product.id,
+                        price_value=Decimal(entry["price_value"]),
+                        currency=entry["currency"],
+                        created_at=datetime.fromisoformat(entry["created_at"]),
+                    ))
         else:
-            # New product — create it with snapshot prices
             product = Product(
                 url=url,
                 name=pd["name"],

@@ -121,8 +121,9 @@ def get_product_info(url):
                         return img.getAttribute('content') || img.getAttribute('src') || img.getAttribute('data-src') || '';
                     });
                 """, selector)
+                _bad = ("doodle", "logo", "banner", "sprite", ".svg", "placeholder")
                 for src in (sources or []):
-                    if src and src.startswith("http"):
+                    if src and src.startswith("http") and not any(b in src.lower() for b in _bad):
                         image_value = src
                         break
                 if image_value:
