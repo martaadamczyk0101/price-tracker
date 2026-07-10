@@ -179,7 +179,8 @@
   color: gray;
 }
 
-.nice-error .pc-left,
+.nice-error .pc-left > .product-img,
+.nice-error .pc-left > .pc-info > :not(.product-error-label),
 .nice-error .pc-initial,
 .nice-error .pc-current-row,
 .nice-error .price-history {
@@ -190,7 +191,7 @@
 .product-error-label {
   margin-top: 6px;
   font-size: 0.85rem;
-  color: #e8a0a0;
+  color: #c08080;
   font-weight: 500;
 }
 

@@ -79,7 +79,7 @@ export default function ProductCard({ product, onDeleted }) {
 
               {product.has_error && (
                 <div className="product-error-label">
-                    Niedostępne – błąd pobierania
+                    Unavailable - failed to fetch price
                 </div>
             )}
 

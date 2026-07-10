@@ -2,7 +2,7 @@ from decimal import Decimal
 
 from sqlalchemy.orm import Session
 
-from backend.app.models import Price, Product, User
+from backend.app.models import Log, Price, Product, User
 from backend.app.utils.alert_service import process_price_alerts
 from backend.app.utils.logger import add_log
 from backend.app.utils.scraper import get_product_info
@@ -31,12 +31,20 @@ def update_prices(db: Session):
 
         if price_value is None:
             log_message = f"Nie udało się pobrać ceny ({product.name})"
-            product.has_error = True
+            prev_log = (
+                db.query(Log)
+                .filter_by(product_id=product.id)
+                .order_by(Log.created_at.desc())
+                .first()
+            )
+            if prev_log and prev_log.status == "ERROR":
+                product.has_error = True
             add_log(
                 product_id=product.id,
                 message=log_message,
                 status="ERROR",
             )
+            db.commit()
             continue
 
         else:

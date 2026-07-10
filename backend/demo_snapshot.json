@@ -60,6 +60,71 @@
         "price_value": "129.00",
         "currency": "PLN",
         "created_at": "2026-06-23T21:55:21"
+      },
+      {
+        "price_value": "79.90",
+        "currency": "PLN",
+        "created_at": "2026-07-01T17:07:51"
+      },
+      {
+        "price_value": "79.90",
+        "currency": "PLN",
+        "created_at": "2026-07-01T18:23:17"
+      },
+      {
+        "price_value": "79.90",
+        "currency": "PLN",
+        "created_at": "2026-07-02T06:14:58"
+      },
+      {
+        "price_value": "79.90",
+        "currency": "PLN",
+        "created_at": "2026-07-02T18:10:36"
+      },
+      {
+        "price_value": "79.90",
+        "currency": "PLN",
+        "created_at": "2026-07-03T06:07:49"
+      },
+      {
+        "price_value": "79.90",
+        "currency": "PLN",
+        "created_at": "2026-07-03T18:10:38"
+      },
+      {
+        "price_value": "79.90",
+        "currency": "PLN",
+        "created_at": "2026-07-04T06:13:52"
+      },
+      {
+        "price_value": "79.90",
+        "currency": "PLN",
+        "created_at": "2026-07-04T18:13:54"
+      },
+      {
+        "price_value": "79.90",
+        "currency": "PLN",
+        "created_at": "2026-07-05T06:11:46"
+      },
+      {
+        "price_value": "79.90",
+        "currency": "PLN",
+        "created_at": "2026-07-05T18:11:17"
+      },
+      {
+        "price_value": "79.90",
+        "currency": "PLN",
+        "created_at": "2026-07-06T06:15:02"
+      },
+      {
+        "price_value": "79.90",
+        "currency": "PLN",
+        "created_at": "2026-07-06T18:12:04"
+      },
+      {
+        "price_value": "65.90",
+        "currency": "PLN",
+        "created_at": "2026-07-08T12:25:53"
       }
     ]
   },
@@ -104,6 +169,76 @@
         "price_value": "279.99",
         "currency": "PLN",
         "created_at": "2026-06-23T11:53:34"
+      },
+      {
+        "price_value": "279.99",
+        "currency": "PLN",
+        "created_at": "2026-07-01T13:17:15"
+      },
+      {
+        "price_value": "279.99",
+        "currency": "PLN",
+        "created_at": "2026-07-01T17:09:20"
+      },
+      {
+        "price_value": "279.99",
+        "currency": "PLN",
+        "created_at": "2026-07-01T18:24:51"
+      },
+      {
+        "price_value": "279.99",
+        "currency": "PLN",
+        "created_at": "2026-07-02T06:16:48"
+      },
+      {
+        "price_value": "279.99",
+        "currency": "PLN",
+        "created_at": "2026-07-02T18:12:01"
+      },
+      {
+        "price_value": "279.99",
+        "currency": "PLN",
+        "created_at": "2026-07-03T06:09:28"
+      },
+      {
+        "price_value": "279.99",
+        "currency": "PLN",
+        "created_at": "2026-07-03T18:12:10"
+      },
+      {
+        "price_value": "279.99",
+        "currency": "PLN",
+        "created_at": "2026-07-04T06:15:39"
+      },
+      {
+        "price_value": "279.99",
+        "currency": "PLN",
+        "created_at": "2026-07-04T18:15:28"
+      },
+      {
+        "price_value": "279.99",
+        "currency": "PLN",
+        "created_at": "2026-07-05T06:13:14"
+      },
+      {
+        "price_value": "279.99",
+        "currency": "PLN",
+        "created_at": "2026-07-05T18:13:11"
+      },
+      {
+        "price_value": "279.99",
+        "currency": "PLN",
+        "created_at": "2026-07-06T06:16:40"
+      },
+      {
+        "price_value": "279.99",
+        "currency": "PLN",
+        "created_at": "2026-07-06T18:13:58"
+      },
+      {
+        "price_value": "279.99",
+        "currency": "PLN",
+        "created_at": "2026-07-08T12:27:28"
       }
     ]
   },
@@ -143,40 +278,71 @@
         "price_value": "384.30",
         "currency": "PLN",
         "created_at": "2026-06-23T11:53:57"
-      }
-    ]
-  },
-  {
-    "name": "Czapka beanie z mankietem i logo TNF",
-    "url": "https://www.thenorthface.com/pl-pl/p/torby-and-wyposazenie-211747/czapka-beanie-z-mankietem-i-logo-tnf-NF0A8CHE?color=EED&size=OS",
-    "image_url": "https://assets.thenorthface.eu/images/t_img/f_auto,h_462,e_sharpen:60,w_462/dpr_2.0/v1744969377/NF0A8CHEEED-HERO/TNF-Logo-Box-Cuffed-Beanie-TNF-HERO.jpg",
-    "initial_price": "97.30",
-    "created_at": "2026-05-26T11:12:55",
-    "prices": [
-      {
-        "price_value": "97.30",
-        "currency": "PLN",
-        "created_at": "2026-05-26T11:12:55"
       },
       {
-        "price_value": "97.30",
+        "price_value": "384.30",
         "currency": "PLN",
-        "created_at": "2026-06-16T15:13:33"
+        "created_at": "2026-07-01T13:19:38"
       },
       {
-        "price_value": "97.30",
+        "price_value": "384.30",
         "currency": "PLN",
-        "created_at": "2026-06-19T21:05:15"
+        "created_at": "2026-07-01T17:11:13"
       },
       {
-        "price_value": "97.30",
+        "price_value": "384.30",
         "currency": "PLN",
-        "created_at": "2026-06-20T10:04:46"
+        "created_at": "2026-07-01T18:26:33"
       },
       {
-        "price_value": "97.30",
+        "price_value": "384.30",
         "currency": "PLN",
-        "created_at": "2026-06-20T20:46:08"
+        "created_at": "2026-07-02T06:18:43"
+      },
+      {
+        "price_value": "384.30",
+        "currency": "PLN",
+        "created_at": "2026-07-02T18:13:55"
+      },
+      {
+        "price_value": "384.30",
+        "currency": "PLN",
+        "created_at": "2026-07-03T06:11:21"
+      },
+      {
+        "price_value": "384.30",
+        "currency": "PLN",
+        "created_at": "2026-07-03T18:14:05"
+      },
+      {
+        "price_value": "384.30",
+        "currency": "PLN",
+        "created_at": "2026-07-04T06:17:24"
+      },
+      {
+        "price_value": "384.30",
+        "currency": "PLN",
+        "created_at": "2026-07-04T18:17:03"
+      },
+      {
+        "price_value": "384.30",
+        "currency": "PLN",
+        "created_at": "2026-07-05T06:15:34"
+      },
+      {
+        "price_value": "384.30",
+        "currency": "PLN",
+        "created_at": "2026-07-05T18:14:48"
+      },
+      {
+        "price_value": "384.30",
+        "currency": "PLN",
+        "created_at": "2026-07-06T06:18:17"
+      },
+      {
+        "price_value": "384.30",
+        "currency": "PLN",
+        "created_at": "2026-07-08T12:29:02"
       }
     ]
   },
@@ -201,30 +367,132 @@
         "price_value": "46.10",
         "currency": "PLN",
         "created_at": "2026-06-19T22:36:20"
+      },
+      {
+        "price_value": "35.90",
+        "currency": "PLN",
+        "created_at": "2026-07-01T13:23:15"
+      },
+      {
+        "price_value": "35.90",
+        "currency": "PLN",
+        "created_at": "2026-07-01T17:17:01"
+      },
+      {
+        "price_value": "35.90",
+        "currency": "PLN",
+        "created_at": "2026-07-01T18:29:46"
+      },
+      {
+        "price_value": "35.90",
+        "currency": "PLN",
+        "created_at": "2026-07-02T06:22:22"
+      },
+      {
+        "price_value": "35.90",
+        "currency": "PLN",
+        "created_at": "2026-07-02T18:16:57"
+      },
+      {
+        "price_value": "35.90",
+        "currency": "PLN",
+        "created_at": "2026-07-03T06:14:58"
+      },
+      {
+        "price_value": "35.90",
+        "currency": "PLN",
+        "created_at": "2026-07-03T18:18:10"
+      },
+      {
+        "price_value": "35.90",
+        "currency": "PLN",
+        "created_at": "2026-07-04T06:22:13"
+      },
+      {
+        "price_value": "35.90",
+        "currency": "PLN",
+        "created_at": "2026-07-04T18:20:33"
+      },
+      {
+        "price_value": "35.90",
+        "currency": "PLN",
+        "created_at": "2026-07-05T06:18:28"
+      },
+      {
+        "price_value": "35.90",
+        "currency": "PLN",
+        "created_at": "2026-07-05T18:19:45"
+      },
+      {
+        "price_value": "35.90",
+        "currency": "PLN",
+        "created_at": "2026-07-06T06:22:54"
+      },
+      {
+        "price_value": "35.90",
+        "currency": "PLN",
+        "created_at": "2026-07-06T18:20:33"
+      },
+      {
+        "price_value": "29.90",
+        "currency": "PLN",
+        "created_at": "2026-07-08T12:32:03"
       }
     ]
   },
   {
-    "name": "Nike Vomero Plus",
-    "url": "https://www.nike.com/pl/t/buty-do-biegania-po-asfalcie-vomero-plus-hJ7172Tr/IR8317-664",
-    "image_url": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/05a049de-94ca-4146-a122-03c9bb021a53/W+NIKE+VOMERO+PLUS.png",
-    "initial_price": "779.99",
-    "created_at": "2026-05-26T11:22:43",
+    "name": "Jordan",
+    "url": "https://www.nike.com/pl/t/meska-koszulka-bramkarska-jordan-woGBbLqz/IF3900-417",
+    "image_url": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/bc08f5e8-622d-4315-b3b6-65027533db2f/M+J+STMT+GOALIE+TOP+P6.png",
+    "initial_price": "389.99",
+    "created_at": "2026-07-08T14:40:11",
     "prices": [
       {
-        "price_value": "779.99",
+        "price_value": "389.99",
         "currency": "PLN",
-        "created_at": "2026-05-26T11:22:43"
-      },
+        "created_at": "2026-07-08T14:40:13"
+      }
+    ]
+  },
+  {
+    "name": "Murdle. 100 zagadek kryminalnych do rozwikłania przy użyciu logiki, wiedzy oraz sztuki dedukcji. Tom 1",
+    "url": "https://www.empik.com/murdle-100-zagadek-kryminalnych-do-rozwiklania-przy-uzyciu-logiki-wiedzy-oraz-sztuki-dedukcji-tom-g-t-karber,p1471758511,ksiazka-p",
+    "image_url": "https://ecsmedia.pl/cdn-cgi/image/width=544,height=544,/c/murdle-100-zagadek-kryminalnych-do-rozwiklania-przy-uzyciu-logiki-wiedzy-oraz-sztuki-dedukcji-tom-1-b-iext202837453.jpg",
+    "initial_price": "41.69",
+    "created_at": "2026-07-08T14:43:13",
+    "prices": [
       {
-        "price_value": "779.99",
+        "price_value": "41.69",
         "currency": "PLN",
-        "created_at": "2026-06-16T15:14:23"
-      },
+        "created_at": "2026-07-08T14:43:16"
+      }
+    ]
+  },
+  {
+    "name": "OAKLEY Okulary sportowe 'RADAR EV PATH' w kolorze Czarny",
+    "url": "https://www.aboutyou.pl/p/oakley/okulary-sportowe-radar-ev-path-4105770?couponId=6a4c52d949b39b53be3c89c9",
+    "image_url": "https://cdn.aboutstatic.com/file/7150cc751f412b665302dd7fa1cd1a0c?brightness=0.96&quality=75&trim=1&height=630&width=1200&expand=1",
+    "initial_price": "935.10",
+    "created_at": "2026-07-08T14:47:30",
+    "prices": [
       {
-        "price_value": "779.99",
+        "price_value": "935.10",
         "currency": "PLN",
-        "created_at": "2026-06-21T12:23:46"
+        "created_at": "2026-07-08T14:47:33"
+      }
+    ]
+  },
+  {
+    "name": "Stanley termos obiadowy ze stali nierdzewnej CLASSIC 0,4 L\n10-09382-111",
+    "url": "https://www.answear.com/p/stanley-termos-obiadowy-ze-stali-nierdzewnej-classic-0-4-l-10-09382-111-1667510",
+    "image_url": "https://img2.ans-media.com/i/700x1050/AA00-OLUZWO-00X_F1.webp?v=1777376074",
+    "initial_price": "199.99",
+    "created_at": "2026-07-08T14:52:07",
+    "prices": [
+      {
+        "price_value": "199.99",
+        "currency": "PLN",
+        "created_at": "2026-07-08T14:52:09"
       }
     ]
   }

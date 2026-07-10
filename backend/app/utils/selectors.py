@@ -88,8 +88,10 @@ SELECTORS = {
     },
     "https://www.empik.com": {
         "price": [
+            "[class*='DesktopPrice-module__priceDefault']",
             "[class*='StickyHeader-module__price']",
-            "[class*='module__price']",
+            "[class*='PriceBox-module__price']",
+            "[class*='productPrice-module__price']",
         ],
         "title": [
             "[class*='mainTitleAndAuthor-module__title']",
