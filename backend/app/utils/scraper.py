@@ -1,6 +1,8 @@
-import json
+import glob
+import os
 import platform
 import random
+import subprocess
 import time
 
 import undetected_chromedriver as uc
@@ -20,6 +22,37 @@ _USER_AGENTS = [
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
 ]
 
+_display = None
+
+
+def init_display():
+    global _display
+    if not _IS_LINUX:
+        return
+    from pyvirtualdisplay import Display
+
+    subprocess.run(["pkill", "-9", "Xvfb"], capture_output=True)
+    for lock in glob.glob("/tmp/.X*-lock"):
+        try:
+            os.remove(lock)
+        except OSError:
+            pass
+
+    _display = Display(visible=False, size=(1920, 1080))
+    _display.start()
+    print("Xvfb display started", flush=True)
+
+
+def stop_display():
+    global _display
+    if _display is not None:
+        try:
+            _display.stop()
+        except Exception:
+            pass
+        _display = None
+        print("Xvfb display stopped", flush=True)
+
 
 def get_product_info(url):
     store_base = next(
@@ -32,24 +65,6 @@ def get_product_info(url):
     price_selectors = SELECTORS[store_base]["price"]
     title_selectors = SELECTORS[store_base]["title"]
     image_selectors = SELECTORS[store_base].get("image", [])
-
-    if _IS_LINUX:
-        import glob
-        import os
-        import subprocess
-        from pyvirtualdisplay import Display
-
-        subprocess.run(["pkill", "-9", "Xvfb"], capture_output=True)
-        for lock in glob.glob("/tmp/.X*-lock"):
-            try:
-                os.remove(lock)
-            except OSError:
-                pass
-
-        display = Display(visible=False, size=(1920, 1080))
-        display.start()
-    else:
-        display = None
 
     options = uc.ChromeOptions()
     options.add_argument("--no-sandbox")
@@ -135,5 +150,3 @@ def get_product_info(url):
 
     finally:
         driver.quit()
-        if display is not None:
-            display.stop()

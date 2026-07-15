@@ -8,6 +8,7 @@ import backend.config as config
 from backend.app import create_app
 from backend.app.models import User
 from backend.app.utils.price_checker import update_prices
+from backend.app.utils.scraper import init_display, stop_display
 from backend.app.utils.telegram_sender import send_telegram_message
 from backend.snapshot_demo import run as snapshot_demo
 
@@ -16,6 +17,7 @@ app = create_app()
 
 def run_update():
     try:
+        init_display()
         with app.app_context():
             session = app.session_factory()
             update_prices(session)
@@ -24,6 +26,8 @@ def run_update():
         print("Price update completed", flush=True)
     except Exception as e:
         print(f"Price update error: {e}", flush=True)
+    finally:
+        stop_display()
 
 
 def handle_telegram_update(update):
