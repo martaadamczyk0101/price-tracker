@@ -47,6 +47,7 @@ services:
       context: .
       dockerfile: Dockerfile.backend
     restart: unless-stopped
+    init: true
     env_file: .env
     environment:
       MYSQL_HOST: db
