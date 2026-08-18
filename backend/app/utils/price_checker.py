@@ -21,27 +21,27 @@ def update_prices(db: Session):
 
         try:
             price_value, title_value, image = get_product_info(product.url)
+            fetch_error_message = f"Nie udało się pobrać ceny ({product.name})"
         except Exception as e:
-            add_log(
-                product_id=product.id,
-                message=f"Błąd scrapera: {e}",
-                status="ERROR",
-            )
-            continue
+            price_value, title_value, image = None, None, None
+            fetch_error_message = f"Błąd scrapera: {e}"
 
         if price_value is None:
-            log_message = f"Nie udało się pobrać ceny ({product.name})"
-            prev_log = (
+            # Only look at fetch-outcome logs (OK/ERROR/PRICE_CHANGE) — alert
+            # failures also log status="ERROR" for this product even when the
+            # price fetch itself succeeded, which would otherwise make a
+            # single real failure look like the second one in a row.
+            last_fetch_log = (
                 db.query(Log)
-                .filter_by(product_id=product.id)
+                .filter(Log.product_id == product.id, Log.status != "ALERT_ERROR")
                 .order_by(Log.created_at.desc())
                 .first()
             )
-            if prev_log and prev_log.status == "ERROR":
+            if last_fetch_log and last_fetch_log.status == "ERROR":
                 product.has_error = True
             add_log(
                 product_id=product.id,
-                message=log_message,
+                message=fetch_error_message,
                 status="ERROR",
             )
             db.commit()
@@ -78,7 +78,7 @@ def update_prices(db: Session):
             add_log(
                 product_id=product.id,
                 message=f"Błąd alertu cenowego: {e}",
-                status="ERROR",
+                status="ALERT_ERROR",
             )
 
         if price_value < product.initial_price:
