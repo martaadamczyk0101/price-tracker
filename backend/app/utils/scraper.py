@@ -149,4 +149,35 @@ def get_product_info(url):
         return price_value, title_value, image_value
 
     finally:
+        _quit_driver(driver)
+
+
+def _quit_driver(driver):
+    try:
         driver.quit()
+    except Exception:
+        pass
+
+    # undetected_chromedriver's quit() only kills the chromedriver
+    # process without waiting on it, leaking the process's stdin/
+    # stdout/stderr pipes (and the zombie itself) in this process
+    # until Python happens to garbage-collect the Popen object. Under
+    # sustained scraping this exhausts the open-file limit, so reap
+    # it explicitly here.
+    proc = getattr(getattr(driver, "service", None), "process", None)
+    if proc is None:
+        return
+    for stream in (proc.stdin, proc.stdout, proc.stderr):
+        if stream is not None:
+            try:
+                stream.close()
+            except Exception:
+                pass
+    try:
+        proc.wait(timeout=5)
+    except Exception:
+        try:
+            proc.kill()
+            proc.wait(timeout=5)
+        except Exception:
+            pass
