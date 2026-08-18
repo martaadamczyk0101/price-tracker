@@ -2,7 +2,7 @@ from decimal import Decimal
 
 from sqlalchemy.orm import Session
 
-from backend.app.models import Log, Price, Product, User
+from backend.app.models import Price, Product, User
 from backend.app.utils.alert_service import process_price_alerts
 from backend.app.utils.logger import add_log
 from backend.app.utils.scraper import get_product_info
@@ -27,18 +27,7 @@ def update_prices(db: Session):
             fetch_error_message = f"Błąd scrapera: {e}"
 
         if price_value is None:
-            # Only look at fetch-outcome logs (OK/ERROR/PRICE_CHANGE) — alert
-            # failures also log status="ERROR" for this product even when the
-            # price fetch itself succeeded, which would otherwise make a
-            # single real failure look like the second one in a row.
-            last_fetch_log = (
-                db.query(Log)
-                .filter(Log.product_id == product.id, Log.status != "ALERT_ERROR")
-                .order_by(Log.created_at.desc())
-                .first()
-            )
-            if last_fetch_log and last_fetch_log.status == "ERROR":
-                product.has_error = True
+            product.has_error = True
             add_log(
                 product_id=product.id,
                 message=fetch_error_message,
