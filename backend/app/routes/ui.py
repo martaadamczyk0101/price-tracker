@@ -13,7 +13,7 @@ from flask import (
 
 from backend.app.models import Alert, Log, Price, Product, User
 from backend.app.utils.auth import login_required
-from backend.app.utils.scraper import get_product_info
+from backend.app.utils.scraper import get_product_info, init_display, stop_display
 from backend.app.utils.logger import add_log
 from backend.app.utils.selectors import SELECTORS
 
@@ -119,6 +119,7 @@ def add_product():
     currency = "PLN"
 
     try:
+        init_display()
         price, name, image = get_product_info(url.strip())
 
     except ValueError as e:
@@ -152,6 +153,9 @@ def add_product():
             ),
             500,
         )
+
+    finally:
+        stop_display()
 
     db = ui_bp.session_factory()
 
