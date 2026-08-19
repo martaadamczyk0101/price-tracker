@@ -8,16 +8,6 @@ SELECTORS = {
         ],
         "image": ["img[data-testid='HeroImg']"],
     },
-"https://www.thenorthface.com": {
-        "price": [
-            "ins.c-red-30 span.ws-nowrap",
-            "section div[data-test-id='product-pricing'] span",
-        ],
-        "title": [
-            "h1[data-test-id='product-name']",
-        ],
-        "image": ["picture[data-test-id='base-picture'] img"],
-    },
     "https://www.bershka.com": {
         "price": [
             "span.current-price-elem-grid--discounted",
