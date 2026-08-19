@@ -33,13 +33,8 @@ SELECTORS = {
             "h1",
         ],
         "image": [
-            "img.gallery-main-photo",
-            ".product-gallery img",
-            ".gallery-main img",
-            "#product-photo img",
-            ".product-images img",
-            "img[class*='product-photo']",
-            "img[class*='gallery-photo']",
+            ".swiper-gallery-window img",
+            "meta[property='og:image']",
         ],
     },
     "https://www.housebrand.com": {
